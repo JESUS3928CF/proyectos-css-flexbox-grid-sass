@@ -1,0 +1,328 @@
+html {
+    box-sizing: border-box;
+    /*- Para no tener que ir a visitar la calculadora simplemente hacemos esto */
+    font-size: 62.5%;
+    /*. 1REM = 10px */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Globales  */
+
+/*/ Así utilizamos las fuentes  */
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    /*- Esto es el interlineado es para cuando tienes mucho texto se separen las lineas*/
+    line-height: 2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    /*- Eliminar los margenes a los heading  */
+    margin: 0 0 5rem 0;
+}
+
+/*/- Algo bueno para hacer a los proyectos es especificar el tamaño de los cabeceros   */
+h1 {
+    font-size: 5rem;
+
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+img {
+    /*- la imagen sera del grande del contenedor  */
+    max-width: 100%;
+    /*- para que ocupe todo el espacio por si hay margen  */
+    display: block;
+}
+
+
+.btn {
+    background-color: #8cbc00;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+
+    /*/ Transiciones para animar en css  */
+    /*- recibe 3 valores la propiedad que se afectara el tiempo y el efecto  */
+    transition: background-color .3s ease-out;
+}
+
+/*/ ese background demorara .3 s en trasformarse  */
+.btn:hover {
+    background-color: #769c02;
+}
+
+
+/*- aca escribiremos css de utilidades para cuando necesitemos las mismas propiedades de css en varios elementos distintos o clases  */
+/*/ Poner después de estilos Globales  */
+/* Utilidades  */
+.text-center {
+    text-align: center;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin-inline: auto;
+    margin: 0 auto;
+}
+
+
+.nombre-sitio {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+
+.contenedor-navegacion {
+    border-top: 0.1rem solid #e1e1e1;
+}
+
+.nombre-sitio span {
+    color: #037bc0;
+}
+
+.nav-principal {
+    padding: 2rem 0;
+
+    /** Habilitando flexbox a este div recuerda que es para afectar a sus hijos */
+    display: flex;
+
+    /*/ Ahora este Alinea verticalmente */
+    justify-content: space-between;
+}
+
+.hero {
+    background-image: url(../img/principal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*- Cuando solo se visualiza una parte de la imagen esto nos sirve para decidir que parte mostrar*/
+    background-position: center center;
+
+    height: 55rem;
+}
+
+/*/ Categorias  */
+
+.listado-categrias {
+    /** Habilitando grid  */
+    display: grid;
+
+    /** como no se recomiendas los px usaremos los fr  */
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+.categorias {
+    padding-top: 5rem;
+}
+
+.categorias h2 {
+    text-align: center;
+}
+
+.categoria a {
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover {
+    background-color: #037bc0;
+    color: #fff;
+
+    border-bottom-right-radius: 1rem;
+}
+
+/* Bloque Nosotros */
+
+.sobre-nosotros {
+    /*/ Aplicando un degradado a la imagen de izquierda a derecha con transparencia y azul y ademas una imagen en donde esta la transparencia */
+    background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%), url(../img/nosotros.jpg);
+    /** valores posibles: button left top right*/
+
+    /*- esto es para la posición  */
+    background-position: left center;
+    /*- para que se ajuste la imagen en el contenedor  */
+    padding: 10rem 0;
+    /** para que no se repita la imagen  */
+    background-repeat: no-repeat;
+    /** para el tamaño de la imagen y el bloque azul*/
+    background-image: 100%, 120rem;
+}
+
+/*! El objetivo es posicionar el texto del lado izquierdo hay muchas formas de hacerlo nosotros utilizaremos Flexbox */
+
+.sobre-nosotros-grid {
+    display: flex;
+    /*/ para posicionar el div del lado derecho  */
+    justify-content: flex-end;
+}
+
+.texto-nosotros {
+    /*/ esto es para que solo ocupe el 50% de todo el espacio  */
+    flex-basis: 50%;
+    padding-left: 10rem;
+    color: #fff;
+}
+
+
+/* Listado de productos */
+
+/*/ Contenedor del div  */
+.listado-productos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+.producto:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+
+    /** Habilitando grid a este elemento  */
+    grid-template-columns: 3fr 1fr;
+}
+
+.producto:nth-child(1) img {
+    height: 43rem;
+    width: 100%;
+
+    /*/ cover lo que hace es ajustar para cubrir completamente el contenedor manteniendo la proporción de aspecto  */
+    object-fit: cover;
+}
+
+.producto:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.producto:nth-child(2) img,
+.producto:nth-child(3) img {
+    height: 30rem;
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.producto:nth-child(3) {
+    grid-column-start: 4;
+    grid-column-end: 7;
+}
+
+/*/ Recuerda que como lo especificamos al principio cada elemento tomara una columna pero ...  */
+.producto:nth-child(4) {
+    /*/ ... Pero con esta sintaxis podemos modificar su tamaño y las columnas que ocupara el elemento  */
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/*/ Haciéndolo de la primer forma no es recomendable por que ya establecí el estilo de la segunda forma pero es para recordar*/
+.producto:nth-child(5) {
+    grid-column: 3 / 5;
+}
+
+
+.producto:nth-child(6) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+}
+
+
+
+
+.contenido-principal {
+    padding-top: 5rem;
+}
+
+.producto {
+    background-color: #037bc0;
+}
+
+.texto-producto {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.texto-producto h3 {
+    margin: 0;
+}
+
+.texto-producto p {
+    margin: 0 0 .5rem 0;
+}
+
+.texto-producto .precio {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+/* FOOTER  */
+
+.site-footer {
+    border-top: 1px solid #e1e1e1;
+    margin-top: 5rem;
+    padding-top: 5rem;
+}
+
+.grid-footer {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-menu a {
+    display: block;
+}
+
+.copyright {
+    margin-top: 5rem;
+}
+
+/*. PAGINA NOSOTROS  */
+
+.contenido-nosotros {
+    display: grid;
+    
+    grid-template-columns: 1fr 2fr;
+    /*- Esta es para manejar el responsive de los elementos de nuestro GRID sin mediaQuery */
+    /*/ Si el contenido es menos a 250 px se asignara una columna completa a cada elemento  */
+    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));
+
+    column-gap: 4rem;
+}
+
+.informacion-nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
