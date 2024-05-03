@@ -312,11 +312,11 @@ img {
 
 .contenido-nosotros {
     display: grid;
-    
+
     grid-template-columns: 1fr 2fr;
     /*- Esta es para manejar el responsive de los elementos de nuestro GRID sin mediaQuery */
     /*/ Si el contenido es menos a 250 px se asignara una columna completa a cada elemento  */
-    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 
     column-gap: 4rem;
 }
@@ -325,4 +325,27 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+/* GALERÍA */
+
+.galeria {
+    /*- eliminar viñeta de una lista  */
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    /* Ejemplo de elementos en un grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/** Caso de uso, definir un tamaño fijo para todas las imágenes */
+.galeria img {
+    width: 40rem;
+    height: 40rem;
+    object-fit: cover;
 }
