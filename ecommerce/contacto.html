@@ -36,17 +36,79 @@
         </nav>
     </div>
 
-    <!--/ No es una section y es la main por que aquí reside el contenido más importante -->
     <main class="contenido-principal contenedor">
         <!--* Utilizando la utilidad  -->
         <h2 class="text-center">Contacto</h2>
 
-        <!--/ Creación de formularios, no es obligatorio meter los imputs dentro de un form pero es la mejor practica  -->
-        <form action="">
-            <!--* con ctrl + . dentro de las "" puedes ver todos los tipos de datos si tu visual esta configurado -->
 
-            <label for="nombre">Nombre</label>  
-            <input id="nombre" type="text" placeholder="ingresa tu nombre"/>
+        <!--! Por defecto se aplica el tipo TEXT, no todos los inputs tienen soporte para todos los navegadores  -->
+
+        <form action="">
+
+            <!--/ esta etiqueta agrupa los inputs, agrega unos estilos -->
+                <fieldset>
+                <legend>Tus Datos</legend>
+
+                <div class="campo">
+                    <!--- La propiedad value es utilizada para asignar un valor inicial al input  -->
+                    <!--- readonly, No permite que se ingrese información en el input  -->
+                    <label for="nombre">Nombre</label>
+                    <input value="Jesús Cochero" readonly id="nombre" type="text" placeholder="ingresa tu nombre" />
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto</label>
+                    <input id="asunto" type="text" placeholder="ingresa tu asunto" />
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <!--- type "email" lo que hace es que valida y pone un @ -->
+                    <input id="email" type="email" placeholder="Tu email" />
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <!--- type "tel" lo que hace es que cundo se usa la app en un Movil el teclado es de números -->
+                    <input id="telefono" type="tel" placeholder="Tu teléfono" />
+                </div>
+
+
+                <!--/ Campos para fechas, date: muestra un calendario, time: muestra las horas, datetime-local: muestra ambos  -->
+                <div class="campo">
+                    <label for="fecha">Fecha</label>
+                    <input id="fecha" type="datetime-local" placeholder="Ingresa la fecha" />
+                </div>
+
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <!--- type "file" para subir archivos-->
+                    <input id="archivo" type="file" placeholder="selecciona un archivo" />
+                </div>
+
+                <div class="campo">
+                    <label for="password">contraseña</label>
+                    <!--- type "password"-->
+                    <input id="password" type="password" placeholder="selecciona un archivo" />
+                </div>
+
+
+                <div class="campo">
+                    <label for="password">Mensaje</label>
+                    <!--- Para Mucho Texto, se puede expandir o reducir desde la vista, el value no existe aca-->
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <!--/ Texto representativo para el grupo de inputs  -->
+                <legend>País</legend>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información Extra</legend>
+            </fieldset>
         </form>
     </main>
 
