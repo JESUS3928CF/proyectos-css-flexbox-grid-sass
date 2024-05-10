@@ -41,17 +41,12 @@
         <h2 class="text-center">Contacto</h2>
 
 
-        <!--! Por defecto se aplica el tipo TEXT, no todos los inputs tienen soporte para todos los navegadores  -->
+        <form class="formulario" action="">
 
-        <form action="">
-
-            <!--/ esta etiqueta agrupa los inputs, agrega unos estilos -->
                 <fieldset>
                 <legend>Tus Datos</legend>
 
                 <div class="campo">
-                    <!--- La propiedad value es utilizada para asignar un valor inicial al input  -->
-                    <!--- readonly, No permite que se ingrese información en el input  -->
                     <label for="nombre">Nombre</label>
                     <input value="Jesús Cochero" readonly id="nombre" type="text" placeholder="ingresa tu nombre" />
                 </div>
@@ -63,18 +58,15 @@
 
                 <div class="campo">
                     <label for="email">Email</label>
-                    <!--- type "email" lo que hace es que valida y pone un @ -->
                     <input id="email" type="email" placeholder="Tu email" />
                 </div>
 
                 <div class="campo">
                     <label for="telefono">Teléfono</label>
-                    <!--- type "tel" lo que hace es que cundo se usa la app en un Movil el teclado es de números -->
                     <input id="telefono" type="tel" placeholder="Tu teléfono" />
                 </div>
 
 
-                <!--/ Campos para fechas, date: muestra un calendario, time: muestra las horas, datetime-local: muestra ambos  -->
                 <div class="campo">
                     <label for="fecha">Fecha</label>
                     <input id="fecha" type="datetime-local" placeholder="Ingresa la fecha" />
@@ -83,32 +75,69 @@
 
                 <div class="campo">
                     <label for="telefono">Teléfono</label>
-                    <!--- type "file" para subir archivos-->
                     <input id="archivo" type="file" placeholder="selecciona un archivo" />
                 </div>
 
                 <div class="campo">
                     <label for="password">contraseña</label>
-                    <!--- type "password"-->
                     <input id="password" type="password" placeholder="selecciona un archivo" />
                 </div>
 
 
                 <div class="campo">
                     <label for="password">Mensaje</label>
-                    <!--- Para Mucho Texto, se puede expandir o reducir desde la vista, el value no existe aca-->
                     <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
                 </div>
             </fieldset>
 
             <fieldset>
-                <!--/ Texto representativo para el grupo de inputs  -->
                 <legend>País</legend>
+
+                <div class="campo">
+                    <label for="pais">País</label>
+
+                    <select id="pais">
+                        <option value="" disabled>-- Seleccione --</option>
+                        <option value="MX">México</option>
+                        <option value="PR">Perú</option>
+                        <option value="CO" selected>Colombia</option>
+                        <option value="AR">Argentina</option>
+                        <option value="ES">España</option>
+                        <option value="CL">Chile</option>
+                    </select>
+                    
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Información Extra</legend>
+
+                <div class="campo">
+                    <label for="cliente">Cliente</label>
+                    <input type="radio" name="info" id="cliente"  value="cliente">
+                </div>
+
+                <div class="campo">
+                    <label for="proveedor">Proveedor</label>
+                    <input type="radio" name="info" id="proveedor" value="proveedor">
+                </div>
+
+                <div class="campo">
+                    <label for="categoria"> Categoría de interés</label>
+                    <input list="categorias" name="categorias" type="text">
+
+                    <datalist id="categorias">
+                        <option value="Cocina"/>
+                        <option value="Exterior" />
+                        <option value="Recamaras" />
+                        <option value="Oficinas" />
+                        <option value="Televisión" />
+                    </datalist>
+                </div>
             </fieldset>
+
+            <input class="btn" type="submit" value="Enviar formulario" >
+
         </form>
     </main>
 

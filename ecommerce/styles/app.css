@@ -69,11 +69,13 @@ img {
     /*/ Transiciones para animar en css  */
     /*- recibe 3 valores la propiedad que se afectara el tiempo y el efecto  */
     transition: background-color .3s ease-out;
+    border: none;
 }
 
 /*/ ese background demorara .3 s en trasformarse  */
 .btn:hover {
     background-color: #769c02;
+    cursor: pointer; /* Para cambiar la forma del cursor */
 }
 
 
@@ -348,4 +350,81 @@ img {
     width: 40rem;
     height: 40rem;
     object-fit: cover;
+}
+
+/* FORMULARIO */
+.formulario {
+    max-width: 60rem;
+    /* De este ancho no va pasar */
+    margin: 0 auto;
+    /* Para que el formulario este centrado */
+}
+
+/* - estilos al fieldset */
+.formulario fieldset {
+    border-color: #000;
+    /* cambiando el color por defecto del borde */
+    border-width: 1px;
+
+    border: 1px solid black;
+    /* Directo */
+
+    margin-bottom: 2rem;
+    /* cada fieldset tendrá este espacio abajo  */
+
+}
+
+/* - estilos a la legend */
+.formulario legend {
+    background-color: #005485;
+    width: 100%;
+    /* abarcar todo el espacio disponible */
+
+    text-align: center;
+
+    color: white;
+
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+
+    font-weight: 900;
+    /* texto mas grueso */
+    padding: 1rem;
+
+    margin-bottom: 4rem;
+}
+
+/*- Estilos a los inputs, alinear los espacios */
+.campo {
+    display: flex;
+    /* De esta forma se alinean de izquierda a derecha */
+    margin-bottom: 2rem;
+    /* de esta forma cada input tiene espacio entre ellos */
+}
+
+.campo label {
+    flex-basis: 10rem;
+    /* Lo que hace en que estos label midan 10 rem y queden todos alineados los forzamos a tener esa base*/
+}
+
+/*- seleccionar elementos por sus propiedades, aquí hay 3 selectores  de esta form solo se aplican la clases a los inputs a los cuales se le ve bien este css*/
+.campo input[type='text'],
+.campo input[type='email'],
+.campo input[type='tel'],
+.campo input:not([type='radio']) {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+
+/*- De sa forma entre más grande el formulario se hace más complejo agregar los selectores hay, lo que podemos hacer es negar, de esta forma se aplica en todos los inputs menos en el que negamos */
+.campo input:not([type='radio']),
+.campo select, .campo textarea {
+    /* toma todo el campo disponible por que esto le va asignado 1px de los que halla disponible pero como no hay nada más */
+    flex: 1;
+
+    border: 1px solid #e1e1e1;
+
+    /* para hacer más grande el formulario */
+    padding: 1rem;
 }
